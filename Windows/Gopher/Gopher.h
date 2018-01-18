@@ -6,6 +6,8 @@
 #include <cmath> //for abs()
 #include <mmdeviceapi.h> //vol
 #include <endpointvolume.h> //vol
+#include <tchar.h>
+#include <ShlObj.h>
 
 #include <map>
 
@@ -58,6 +60,7 @@ private:
 	DWORD CONFIG_DISABLE = NULL;
 	DWORD CONFIG_DISABLE_VIBRATION = NULL;
 	DWORD CONFIG_SPEED_CHANGE = NULL;
+	DWORD CONFIG_OSK = NULL;
 
 	//Gamepad bindings
 	DWORD GAMEPAD_DPAD_UP = NULL;
@@ -139,4 +142,6 @@ public:
 	void mapMouseClick(DWORD STATE, DWORD keyDown, DWORD keyUp);
 
 	void setXboxClickState(DWORD state);
+
+	HWND getOskWindow();
 };
